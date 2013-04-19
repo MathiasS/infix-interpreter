@@ -13,7 +13,7 @@ Ablaufbeschreibung InfixInterpreter
 
 __Vorbereitungen__
 
-Zu Beginn der Kalkulation in der Methode calc() wird der �bergebene Term um eventuelle Leerzeichen
+Zu Beginn der Kalkulation in der Methode calc() wird der uebergebene Term um eventuelle Leerzeichen
 bereinigt und eine Validitaetsueberpruefung in der Methode isValidTerm() findet statt.
 Anschliessend findet die Initialisierung der beiden benoetigten Stacks fuer die Operatoren und
 Operanden statt. Des Weiteren wird Term mit Klammern umgeben, die im spaeteren Verlauf fuer eine
@@ -22,6 +22,7 @@ Abschliessend wird der Term durch einen Tokenizer in einzelne Teile zerlegt, get
 Operatoren (+-*/()) und Operanden.
 
 __Hauptschleife__
+
 Solange weitere Elemente (Tokens) im Tokenizer vorliegen, wird fuer jedes Element der
 Schleifenkoerper durchlaufen. In diesem finden Fallunterscheidungen statt:
 
@@ -29,28 +30,19 @@ a)	Es handelt sich um eine oeffnende Klammer:
 	Die Klammer wird auf den Operatorstack gelegt.
 	
 b)	Es handelt sich um einen Operanden:
-	Hierbei wird zuerst geprueft, ob ein Negierer im Operanden enthalten, damit dieser ber�cksich-
-	tigt werden kann. Anschliessend der wird Wert auf den Operandenstack gelegt.
+	Hierbei wird zuerst geprueft, ob ein Negierer im Operanden enthalten, damit dieser beruecksichtigt werden kann. Anschliessend der wird Wert auf den Operandenstack gelegt.
 	
 c)	Es handelt sich um eine schliessende Klammer:
-	Es wird eine innere Schleife durchlaufen, die abgebrochen wird, bis das naechste Element auf dem
-	Operatorstack eine oeffnende Klammer ist. Dies bedeutet, dass alle notwendigen Kalkulationen
-	durchgefuehrt wurden.
-	Innerhalb der Schleife wird ein Operator vom Operatorstack genommen und zwei Operanden vom
-	Operandenstack. Diese werden nun entsprechend ihrer Kommutativitaet berechnet und das Ergebnis
-	auf den Operandenstack gelegt.
-	Abschliessend (nach Durchlauf der Schleife) wird die oeffnende Klammer vom Operatorstack entfernt, da diese mit der ausloesenden,
-	schliessenden Klammer korrespondierte und nun aufgeloest werden kann.
+	Es wird eine innere Schleife durchlaufen, die abgebrochen wird, bis das naechste Element auf dem Operatorstack eine oeffnende Klammer ist. Dies bedeutet, dass alle notwendigen Kalkulationen durchgefuehrt wurden.
+Innerhalb der Schleife wird ein Operator vom Operatorstack genommen und zwei Operanden vom Operandenstack. Diese werden nun entsprechend ihrer Kommutativitaet berechnet und das Ergebnis auf den Operandenstack gelegt.
+	Abschliessend (nach Durchlauf der Schleife) wird die oeffnende Klammer vom Operatorstack entfernt, da diese mit der ausloesenden, schliessenden Klammer korrespondierte und nun aufgeloest werden kann.
 
 d)	Es handelt sich um einen Operator +-*/:
-	Es wird eine innere Schleife durchlaufen, die abgebrochen wird, wenn der Operatorstock leer ist
-	oder die Praezedenz des oben auf dem Operatorstack liegenden Operators geringer ist als die
-	Praezedenz des aktuellen Operators.
-	Innerhalb der Schleife wird ein Operator vom Operatorstack genommen und zwei Operanden vom
-	Operandenstack. Diese werden nun entsprechend ihrer Kommutativitaet berechnet und das Ergebnis
-	auf den Operandenstack gelegt.
-	Abschliessend (nach Durchlauf der Schleife) wird der aktuelle Operator auf den Stack gelegt.
+	Es wird eine innere Schleife durchlaufen, die abgebrochen wird, wenn der Operatorstock leer ist oder die Praezedenz des oben auf dem Operatorstack liegenden Operators geringer ist als die Praezedenz des aktuellen Operators.
+Innerhalb der Schleife wird ein Operator vom Operatorstack genommen und zwei Operanden vom Operandenstack. Diese werden nun entsprechend ihrer Kommutativitaet berechnet und das Ergebnis auf den Operandenstack gelegt.
+Abschliessend (nach Durchlauf der Schleife) wird der aktuelle Operator auf den Stack gelegt.
 
 __Ausgabe__
+
 Zum Abschluss wird das letzte verbliebene Element auf dem Operandenstack ausgegeben. Dieses
 entspricht dem Ergebnis der Berechnung des Terms.
