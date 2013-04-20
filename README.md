@@ -2,10 +2,23 @@ infix-interpreter
 =================
 
 Interpreter und Auswerter von Termen in Infix-Notation
+Aktuelle Version: 0.1
+
+* Lizenz
+* Features
+* Ablaufbeschreibung InfixInterpreter
+* ChangeLog
 
 Lizenz
 ------
 Die Quelltexte in diesem Projekt stehen unter der MIT-Lizenz. Der Lizenztext findet sich in der Datei LICENSE.
+
+Features
+--------
+Folgende Funktionen sind bereits implementiert:
+- Verarbeitung der 4 Grundrechenarten
+- Negation von Werten durch vorangestelltes "n" vor Operand
+
 
 
 Ablaufbeschreibung InfixInterpreter
@@ -46,3 +59,8 @@ __Ausgabe__
 
 Zum Abschluss wird das letzte verbliebene Element auf dem Operandenstack ausgegeben. Dieses
 entspricht dem Ergebnis der Berechnung des Terms.
+
+ChangeLog
+---------
+
+0.1: Initiale Implementierung
