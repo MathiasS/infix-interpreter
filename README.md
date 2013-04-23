@@ -57,5 +57,5 @@ entspricht dem Ergebnis der Berechnung des Terms.
 ChangeLog
 ---------
 
-0.2: Erweiterung um eigenen Tokenizer zur Verarbeitung negativer Werte
-0.1: Initiale Implementierung
+- 0.2: Erweiterung um eigenen Tokenizer zur Verarbeitung negativer Werte
+- 0.1: Initiale Implementierung
