@@ -33,13 +33,7 @@ public class InfixInterpreter {
 			
 			else if (!isOperator(token) && !token.equals(")")) {
 			
-				int negotiator = 1;
-				if(token.startsWith("n")){
-					token = token.replaceAll("n", "");
-					negotiator = -1;
-				}
 				num = Double.parseDouble(token);
-				num *= negotiator;
 				valueStack.push(num);
 				
 			} else if (token.equals(")")){

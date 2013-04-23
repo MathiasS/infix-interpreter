@@ -41,14 +41,23 @@ public class InfixTokenizer implements Enumeration<String> {
 				tokens.add("+");
 				break;
 			case '-':
-				tokenFiller();
-				tokens.add("-");
+				if(isOperator(chars[i-1])){
+					buffer += chars[i];
+				} else {
+					tokenFiller();
+					tokens.add("-");
+				}
 				break;
 			default:
 				buffer += chars[i];
 				break;
 			}
 		}
+	}
+	
+	private boolean isOperator(char c){
+		if (c == '+' || c == '-' || c == '*' || c == '/' || c == '(') return true;
+		return false;
 	}
 	
 	private void tokenFiller(){
