@@ -65,6 +65,7 @@ public class InfixInterpreter {
 	
 	public double evaluate(String operator, double val1, double val2){
 		double result = 0.0;
+		if (operator.equals("^")) result = Math.pow(val2, val1);
 		if (operator.equals("+")) result = val1+val2;
 		if (operator.equals("-")) result = val2-val1;
 		if (operator.equals("*")) result = val1*val2;
@@ -73,14 +74,15 @@ public class InfixInterpreter {
 	}
 	
 	public boolean isOperator(String ch){
-		if(ch.equals("+") || ch.equals("-") || ch.equals("*") || ch.equals("/")) return true;
+		if(ch.equals("+") || ch.equals("-") || ch.equals("*") || ch.equals("/") || ch.equals("^")) return true;
 		return false;
 	}
 	
 	public int getPrio(String ch){
 		int prio = 0;
-		 
-		if (ch.equals("*") || ch.equals("/"))	prio = 2; 
+		
+		if (ch.equals("^"))							prio = 3;
+		else if (ch.equals("*") || ch.equals("/"))	prio = 2; 
 		else if (ch.equals("+") || ch.equals("-"))	prio = 1;
 		else if (ch.equals("(") || ch.equals(")"))	prio = 0;
 		

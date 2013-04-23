@@ -16,7 +16,7 @@ public class InfixTokenizer implements Enumeration<String> {
 	private int					pointer	= 0;
 	
 	public InfixTokenizer(String term){
-		// split term on "()*/+-"
+		// split term on "()*/+-^"
 		char[] chars = term.toCharArray();
 		for(int i = 0; i < chars.length; i++){
 			switch (chars[i]) {
@@ -48,6 +48,10 @@ public class InfixTokenizer implements Enumeration<String> {
 					tokens.add("-");
 				}
 				break;
+			case '^':
+				tokenFiller();
+				tokens.add("^");
+				break;
 			default:
 				buffer += chars[i];
 				break;
@@ -56,7 +60,7 @@ public class InfixTokenizer implements Enumeration<String> {
 	}
 	
 	private boolean isOperator(char c){
-		if (c == '+' || c == '-' || c == '*' || c == '/' || c == '(') return true;
+		if (c == '+' || c == '-' || c == '*' || c == '/' || c == '(' || c == '^') return true;
 		return false;
 	}
 	
