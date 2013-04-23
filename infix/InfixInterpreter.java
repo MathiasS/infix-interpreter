@@ -7,7 +7,6 @@ Licensed under MIT/X11-License. License text can be found in LICENSE file in roo
 package infix;
 
 import java.util.Stack;
-import java.util.StringTokenizer;
 
 public class InfixInterpreter {
 
@@ -24,7 +23,7 @@ public class InfixInterpreter {
 		
 		String token;
 		term = "(" + term + ")";
-		StringTokenizer tokenizer = new StringTokenizer(term, "()*/+-", true);
+		InfixTokenizer tokenizer = new InfixTokenizer(term);
 
 		while (tokenizer.hasMoreTokens()){
 			token = tokenizer.nextToken();

@@ -1,13 +1,7 @@
 infix-interpreter
 =================
 
-Interpreter und Auswerter von Termen in Infix-Notation
-Aktuelle Version: 0.1
-
-* Lizenz
-* Features
-* Ablaufbeschreibung InfixInterpreter
-* ChangeLog
+Interpreter und Auswerter von Termen in Infix-Notation (Version 0.1)
 
 Lizenz
 ------

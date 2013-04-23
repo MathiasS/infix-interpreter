@@ -30,6 +30,6 @@ public class InfixRunner {
 		double result = interpreter.calc(term);
 		
 		System.out.println(result);
+		
 	}
-
 }
