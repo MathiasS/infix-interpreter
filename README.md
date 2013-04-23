@@ -1,7 +1,7 @@
 infix-interpreter
 =================
 
-Interpreter und Auswerter von Termen in Infix-Notation (Version 0.1)
+Interpreter und Auswerter von Termen in Infix-Notation (Version 0.2)
 
 Lizenz
 ------
@@ -11,7 +11,7 @@ Features
 --------
 Folgende Funktionen sind bereits implementiert:
 - Verarbeitung der 4 Grundrechenarten
-- Negation von Werten durch vorangestelltes "n" vor Operand
+- Negation von Werten durch vorangestelltes "-", wenn folgend auf einen anderen Operator
 
 
 
@@ -37,7 +37,7 @@ a)	Es handelt sich um eine oeffnende Klammer:
 	Die Klammer wird auf den Operatorstack gelegt.
 	
 b)	Es handelt sich um einen Operanden:
-	Hierbei wird zuerst geprueft, ob ein Negierer im Operanden enthalten, damit dieser beruecksichtigt werden kann. Anschliessend der wird Wert auf den Operandenstack gelegt.
+	Der Wert wird auf den Operandenstack gelegt.
 	
 c)	Es handelt sich um eine schliessende Klammer:
 	Es wird eine innere Schleife durchlaufen, die abgebrochen wird, bis das naechste Element auf dem Operatorstack eine oeffnende Klammer ist. Dies bedeutet, dass alle notwendigen Kalkulationen durchgefuehrt wurden.
@@ -57,4 +57,5 @@ entspricht dem Ergebnis der Berechnung des Terms.
 ChangeLog
 ---------
 
+0.2: Erweiterung um eigenen Tokenizer zur Verarbeitung negativer Werte
 0.1: Initiale Implementierung
