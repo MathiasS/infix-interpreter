@@ -1,7 +1,7 @@
 infix-interpreter
 =================
 
-Interpreter und Auswerter von Termen in Infix-Notation (Version 0.3)
+Interpreter und Auswerter von Termen in Infix-Notation (Version 0.4)
 
 Lizenz
 ------
@@ -26,7 +26,7 @@ Anschliessend findet die Initialisierung der beiden benoetigten Stacks fuer die 
 Operanden statt. Des Weiteren wird Term mit Klammern umgeben, die im spaeteren Verlauf fuer eine
 Evaluierung verantwortlich ist.
 Abschliessend wird der Term durch einen Tokenizer in einzelne Teile zerlegt, getrennt nach
-Operatoren (+-*/()^) und Operanden.
+Operatoren (+-*/()^) und Operanden. Hierbei werden ebenfalls Klammern bei Potenzen eingefügt, um die Rechtsassoziativität zu gewährleisten.
 
 __Hauptschleife__
 
@@ -57,7 +57,7 @@ entspricht dem Ergebnis der Berechnung des Terms.
 ChangeLog
 ---------
 
-- 0.4: Potenzierung arbeitet nun rechtsassoziativ
+- 0.4: Potenzierung arbeitet nun rechtsassoziativ / Negation wird nun auch vor Klammern erkannt
 - 0.3: Erweiterung um Verarbeitung der Potenzierung mit dem Symbol "^"
 - 0.2: Erweiterung um eigenen Tokenizer zur Verarbeitung negativer Werte
 - 0.1: Initiale Implementierung

@@ -49,7 +49,10 @@ public class InfixTokenizer implements Enumeration<String> {
 				tokens.add("+");
 				break;
 			case '-':
-				if(isOperator(chars[i-1])){
+				if ((i == 0 && isOperator(chars[i+1])) || chars[i+1] == '('){
+					tokens.add("-1");
+					tokens.add("*");
+				} else if (isOperator(chars[i-1])){
 					buffer += chars[i];
 				} else {
 					tokenFiller();
