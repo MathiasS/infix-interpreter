@@ -10,7 +10,7 @@ Die Quelltexte in diesem Projekt stehen unter der MIT-Lizenz. Der Lizenztext fin
 Features
 --------
 Folgende Funktionen sind bereits implementiert:
-- Verarbeitung der 4 Grundrechenarten und der Potenzierung durch "^" (nur nachfolgender Operand)
+- Verarbeitung der 4 Grundrechenarten und der Potenzierung durch "^" (mit rechtsassoziativem Verhalten)
 - Negation von Werten durch vorangestelltes "-", wenn folgend auf einen anderen Operator
 
 
@@ -57,6 +57,7 @@ entspricht dem Ergebnis der Berechnung des Terms.
 ChangeLog
 ---------
 
+- 0.4: Potenzierung arbeitet nun rechtsassoziativ
 - 0.3: Erweiterung um Verarbeitung der Potenzierung mit dem Symbol "^"
 - 0.2: Erweiterung um eigenen Tokenizer zur Verarbeitung negativer Werte
 - 0.1: Initiale Implementierung
