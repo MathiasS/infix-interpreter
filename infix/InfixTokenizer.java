@@ -16,6 +16,14 @@ public class InfixTokenizer implements Enumeration<String> {
 	private int					pointer	= 0;
 	
 	public InfixTokenizer(String term){
+		// to implement right-associativity exponents needs to be in brackets
+		for(int i = 0; i < term.length(); i++){
+			String character = term.substring(i,i+1);
+			if(character.equals("^")){
+				term = term.substring(0, i+1) + "(" + term.substring(i+1) + ")";
+				i+=2;
+			}
+		}
 		// split term on "()*/+-^"
 		char[] chars = term.toCharArray();
 		for(int i = 0; i < chars.length; i++){
